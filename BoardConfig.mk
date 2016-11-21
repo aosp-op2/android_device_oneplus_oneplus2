@@ -120,6 +120,8 @@ BOARD_USES_QCNE := true
 # Cpusets
 ENABLE_CPUSETS := true
 
+BOARD_EGL_CFG := device/qcom/$(TARGET_BOARD_PLATFORM)/egl.cfg
+
 # GPS
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
@@ -164,6 +166,7 @@ TARGET_NO_RPC := true
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 TARGET_PREFERS_AOSP_ROTATION_SENSOR := true
+TARGET_USES_IMS := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
