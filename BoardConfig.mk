@@ -58,8 +58,6 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 TARGET_USES_64_BIT_BINDER := true
 
-BOARD_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_11 -DCOMPAT_SENSORS_M
-
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-3 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
@@ -165,17 +163,7 @@ TARGET_NO_RPC := true
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
-BOARD_GLOBAL_CFLAGS += -DCOMPAT_SENSORS_M
 TARGET_PREFERS_AOSP_ROTATION_SENSOR := true
-
-# Enable dexpreopt to speed boot time
-ifeq ($(HOST_OS),linux)
-  ifeq ($(call match-word-in-list,$(TARGET_BUILD_VARIANT),user),true)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
