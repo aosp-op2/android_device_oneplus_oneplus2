@@ -122,10 +122,6 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libtinyxml
 
-# Doze mode
-PRODUCT_PACKAGES += \
-    OneplusDoze
-
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
 
